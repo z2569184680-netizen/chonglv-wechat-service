@@ -16,6 +16,11 @@ app.use(logger);
 app.get("/", async (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
+// 微信消息推送
+app.post("/", async (req, res) => {
+  console.log("收到微信消息推送", req.body);
+  res.send("success");
+});
 
 // 更新计数
 app.post("/api/count", async (req, res) => {
